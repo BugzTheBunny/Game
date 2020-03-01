@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="641c5171-d812-4902-81dc-763485afdef6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Game/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/../Game/Readme" afterDir="false" />
+    <list default="true" id="641c5171-d812-4902-81dc-763485afdef6" name="Default Changelist" comment="Added gravity for the">
+      <change beforePath="$PROJECT_DIR$/../Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Game/Player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Game" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="game" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -44,6 +45,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Game" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Game/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,6 +140,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -140,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583057951977</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first Commit">
+      <created>1583057987343</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583057987343</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -152,37 +182,41 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="723" y="383" key="#com.intellij.fileTypes.FileTypeChooser/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057892058" />
-    <state x="614" y="177" key="CommitChangelistDialog2" timestamp="1583057950105">
+    <state x="614" y="177" key="CommitChangelistDialog2" timestamp="1583059990850">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="614" y="177" key="CommitChangelistDialog2/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057950105" />
-    <state x="740" y="322" key="FileChooserDialogImpl" timestamp="1583057838871">
+    <state x="614" y="177" key="CommitChangelistDialog2/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583059990850" />
+    <state x="740" y="322" key="FileChooserDialogImpl" timestamp="1583058007962">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="322" key="FileChooserDialogImpl/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057838871" />
-    <state width="1061" height="203" key="GridCell.Tab.0.bottom" timestamp="1583057005359">
+    <state x="740" y="322" key="FileChooserDialogImpl/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583058007962" />
+    <state x="842" y="474" width="260" height="212" key="Github.ShareDialog" timestamp="1583058140405">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="842" y="474" width="260" height="212" key="Github.ShareDialog/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583058140405" />
+    <state width="1899" height="178" key="GridCell.Tab.0.bottom" timestamp="1583063548613">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1061" height="201" key="GridCell.Tab.0.bottom/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@-1920.116.1280.693" timestamp="1583050903662" />
-    <state width="1061" height="203" key="GridCell.Tab.0.bottom/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057005359" />
+    <state width="1899" height="178" key="GridCell.Tab.0.bottom/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583063548613" />
     <state width="2539" height="401" key="GridCell.Tab.0.bottom/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@1920.-142.2560.1400" timestamp="1583050102861" />
-    <state width="1061" height="203" key="GridCell.Tab.0.center" timestamp="1583057005359">
+    <state width="1899" height="178" key="GridCell.Tab.0.center" timestamp="1583063548613">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1061" height="201" key="GridCell.Tab.0.center/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@-1920.116.1280.693" timestamp="1583050903661" />
-    <state width="1061" height="203" key="GridCell.Tab.0.center/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057005359" />
+    <state width="1899" height="178" key="GridCell.Tab.0.center/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583063548613" />
     <state width="2539" height="401" key="GridCell.Tab.0.center/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@1920.-142.2560.1400" timestamp="1583050102861" />
-    <state width="1061" height="203" key="GridCell.Tab.0.left" timestamp="1583057005359">
+    <state width="1899" height="178" key="GridCell.Tab.0.left" timestamp="1583063548613">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1061" height="201" key="GridCell.Tab.0.left/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@-1920.116.1280.693" timestamp="1583050903661" />
-    <state width="1061" height="203" key="GridCell.Tab.0.left/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057005359" />
+    <state width="1899" height="178" key="GridCell.Tab.0.left/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583063548613" />
     <state width="2539" height="401" key="GridCell.Tab.0.left/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@1920.-142.2560.1400" timestamp="1583050102861" />
-    <state width="1061" height="203" key="GridCell.Tab.0.right" timestamp="1583057005359">
+    <state width="1899" height="178" key="GridCell.Tab.0.right" timestamp="1583063548613">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1061" height="201" key="GridCell.Tab.0.right/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@-1920.116.1280.693" timestamp="1583050903661" />
-    <state width="1061" height="203" key="GridCell.Tab.0.right/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057005359" />
+    <state width="1899" height="178" key="GridCell.Tab.0.right/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583063548613" />
     <state width="2539" height="401" key="GridCell.Tab.0.right/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@1920.-142.2560.1400" timestamp="1583050102861" />
     <state width="1061" height="203" key="GridCell.Tab.1.bottom" timestamp="1583057005359">
       <screen x="0" y="0" width="1920" height="1160" />
@@ -204,5 +238,13 @@
     </state>
     <state width="1061" height="203" key="GridCell.Tab.1.right/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@-1920.116.1280.693" timestamp="1583050704725" />
     <state width="1061" height="203" key="GridCell.Tab.1.right/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057005359" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1583058023028">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583058023028" />
+    <state x="789" y="445" width="649" height="270" key="git4idea.rebase.GitRebaseDialog" timestamp="1583058083476">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="789" y="445" width="649" height="270" key="git4idea.rebase.GitRebaseDialog/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583058083476" />
   </component>
 </project>
