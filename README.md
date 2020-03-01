@@ -1,4 +1,4 @@
-# Game (Angry Bird ?) V - 0.1
+# Game (Angry Bird ?) V - 0.01
 **Will try to make an angrybirds game (Kivy - Python)**
 
 
