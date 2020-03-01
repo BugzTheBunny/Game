@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="641c5171-d812-4902-81dc-763485afdef6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Game/player.png" afterDir="false" />
+    <list default="true" id="641c5171-d812-4902-81dc-763485afdef6" name="Default Changelist" comment="Ground + ground collision">
       <change beforePath="$PROJECT_DIR$/../Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Game/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Game/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Game/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,23 +197,31 @@
       <option name="project" value="LOCAL" />
       <updated>1583064644283</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ground + ground collision">
+      <created>1583072385946</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583072385946</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first Commit" />
     <MESSAGE value="Enemy + collision" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemy + collision" />
+    <MESSAGE value="Ground + ground collision" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ground + ground collision" />
   </component>
   <component name="WindowStateProjectService">
     <state x="723" y="383" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583057892058">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="723" y="383" key="#com.intellij.fileTypes.FileTypeChooser/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583057892058" />
-    <state x="614" y="177" key="CommitChangelistDialog2" timestamp="1583064642771">
+    <state x="614" y="177" key="CommitChangelistDialog2" timestamp="1583072501975">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="614" y="177" key="CommitChangelistDialog2/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583064642771" />
+    <state x="614" y="177" key="CommitChangelistDialog2/-1920.116.1280.693/1920.-142.2560.1400/0.0.1920.1160@0.0.1920.1160" timestamp="1583072501975" />
     <state x="740" y="322" key="FileChooserDialogImpl" timestamp="1583058007962">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
