@@ -13,3 +13,9 @@ Controls : W,A,D (Will adapt for touch? - probably)
 
 • Created Ground + Gravity
 
+• Basic animations
+
+• Platforms added
+
+• Rocket Enemy Edited
+

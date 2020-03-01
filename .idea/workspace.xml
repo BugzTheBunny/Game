@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="641c5171-d812-4902-81dc-763485afdef6" name="Default Changelist" comment="Ground + ground collision">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="641c5171-d812-4902-81dc-763485afdef6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583072571766</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Platforms + basic animations">
+      <created>1583096752739</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583096752739</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +273,8 @@
     <MESSAGE value="first Commit" />
     <MESSAGE value="Enemy + collision" />
     <MESSAGE value="Ground + ground collision" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ground + ground collision" />
+    <MESSAGE value="Platforms + basic animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Platforms + basic animations" />
   </component>
   <component name="WindowStateProjectService">
     <state x="723" y="383" key="#com.intellij.fileTypes.FileTypeChooser" />
