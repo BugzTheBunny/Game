@@ -5,4 +5,6 @@
 
 
 `3/1/2019:`
-***Made a moving block (I'ts moving by FPS).***
+
+Created a "player", added an enemy(Will be tubes hopefully), gravity and a colission.
+
