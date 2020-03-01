@@ -7,10 +7,10 @@ import random
 import time
 
 
-
 def collide(player, object):
-    player = (player.pos,player.size)
-    object = (object.pos,object.size)
+    player = (player.pos, player.size)
+    object = (object.pos, object.size)
+
     p_x = player[0][0]
     p_y = player[0][1]
     e_x = object[0][0]
@@ -40,16 +40,26 @@ class GameWidget(Widget):
         self._keyboard = Window.request_keyboard(self._on_keyboard_close, self)
         self._keyboard.bind(on_key_down=self._on_key_down)
         self._keyboard.bind(on_key_up=self._on_key_up)
-
+        ride_animations = ['src/ride_1.png', 'src/ride_2.png']
         with self.canvas:
+
+            # Backgrounds
+            self.background2 = Rectangle(source='src/background.jpg', size=(800, 600))
+            self.background = Rectangle(source='src/background.jpg', size=(802, 600), pos=(800, 0))
+            # Ground Model
             self.ground = Rectangle(pos=(0, 0), size=(800, 20))
-            self.player = Rectangle(source="player.png", pos=(0, self.ground.size[1]), size=(48, 40))
-            self.trap = Triangle(pos=(5, 5))
+            # Player Model
+            self.player = Rectangle(source=random.choice(ride_animations), pos=(0, self.ground.size[1]), size=(96, 80))
+            # Rocket Model
+            self.rocket = Rectangle(source='src/enemy_rocket.png', size=(60, 30))
+            # Enemy Model
             self.enemy = Rectangle(pos=(100, 100), size=(50, 50))
+            # Platform Model
+            self.platform = Rectangle(pos=(799, random.randint(100, 400)), size=(random.randint(100, 400), 20))
 
         self.keysPressed = set()
         Clock.schedule_interval(self.move_step, 0)
-        Clock.schedule_interval(self.jump, 0)
+
     def _on_keyboard_close(self):
         self._keyboard.unbind(on_key_down=self._on_key_down)
         self._keyboard.unbind(on_key_up=self._on_key_up)
@@ -63,17 +73,6 @@ class GameWidget(Widget):
         if text in self.keysPressed:
             self.keysPressed.remove(text)
 
-    def jump(self,dt):
-        currentx = self.player.pos[0]
-        currenty = self.player.pos[1]
-
-        step_size = 60 * dt
-
-        if collide(self.player, self.ground) and "w" in self.keysPressed:
-            self.player.source = 'player_jump.png'
-            for (i) in range(400):
-                jump = i/2
-                self.player.pos = (currentx, currenty+jump)
 
     def move_step(self, dt):
         """
@@ -82,38 +81,85 @@ class GameWidget(Widget):
         :param dt:
         :return:
         """
+        ride_animations = ['src/ride_1.png', 'src/ride_2.png']
+        rocket_x = self.rocket.pos[0]
+        rocket_y = self.rocket.pos[1]
+
+        platform_x = self.platform.pos[0]
+        platform_y = self.platform.pos[1]
+
         currentx = self.player.pos[0]
         currenty = self.player.pos[1]
 
-        step_size = 60 * dt
+        bg_1_x = self.background.pos[0]
+        bg_2_x = self.background2.pos[0]
 
-        # if collide(self.player, self.ground) and "w" in self.keysPressed:
-        #     self.player.source = 'player_jump.png'
-        #     for (i) in range(400):
-        #         time.sleep(0.1)
-        #         jump = i/2
-        #         self.player.pos = (currentx, currenty+jump)
-        #         print(self.player.pos)
-        # if "s" in self.keysPressed:
-        #     currenty -= step_size
+        step_size = 300 * dt
+
         if "a" in self.keysPressed:
-            currentx -= step_size * 2
+            currentx -= step_size * 4
         if "d" in self.keysPressed:
-            currentx += step_size * 2
+            currentx += step_size * 8
 
-
-        # Gravity (If you wont press W)
-        if 'w' not in self.keysPressed and collide(self.player, self.ground) is False:
-            currenty -= random.randint(6,7)
+        # Gravity (While not pressing W)
+        if 'w' not in self.keysPressed:
+            if collide(self.player, self.ground) is False and collide(self.player, self.platform) is False:
+                currenty -= 3  # Gravity power
+            print(f'ground {collide(self.player, self.ground)}')
+            print(f'platform {collide(self.player, self.platform)}')
             self.player.pos = (currentx, currenty)
-            self.player.source = 'player.png'
+            self.player.source = random.choice(ride_animations)
+
+        # ==============================================
+        # Ride on Ground
+        if collide(self.player, self.ground):
+            self.player.pos = (currentx, currenty + self.ground.pos[1])
+            if 'd' not in self.keysPressed:
+                self.player.source = random.choice(ride_animations)
+            else:
+                self.player.source = 'player_jump.png'
+
+        # Ride on platform
+        elif collide(self.player, self.platform):
+            self.player.pos = (currentx, self.platform.pos[1] + 20)
+            if 'd' not in self.keysPressed:
+                self.player.source = random.choice(ride_animations)
+            else:
+                self.player.source = 'player_jump.png'
+
+        # Jump
+        if collide(self.player, self.ground) and "w" in self.keysPressed or collide(self.player, self.platform) and "w" in self.keysPressed:
+            self.player.source = 'player_jump.png'
+            self.player.pos = (currentx, currenty + 250)
+
+        # ==============================================
+        # If you hit a rocket.
+        if collide(self.player, self.rocket):
+            print('BOOM!')
+        # Enemy HIT
         if collide(self.player, self.enemy):
             self.enemy.pos = (random.randint(0, 500), random.randint(0, 500))
 
-        if collide(self.player, self.ground):
-            self.player.pos = (currentx, self.ground.size[1])
-            if 'd' not in self.keysPressed:
-                self.player.source = 'player.png'
-            else:
-                self.player.source = 'player_jump.png'
-            # print(f'{collide(self.player, self.ground)} - {self.player.pos} {self.ground.pos}')
+        # ==============================================
+        # rocket
+        if self.rocket.pos[0] > -5:
+            self.rocket.pos = (rocket_x - random.randint(0, 10), rocket_y)
+        else:
+            self.rocket.pos = (799, random.randint(0, 100))
+        # Platform
+        if self.platform.pos[0] > -self.platform.size[0]:
+            self.platform.pos = (platform_x - 1, platform_y)
+        else:
+            self.platform.pos = (799, random.randint(0, 30))
+
+        if bg_1_x > -800:
+            self.background.pos = (bg_1_x - 2, self.background.pos[1])
+        elif bg_1_x == -800:
+            bg_1_x = 800
+            self.background.pos = (bg_1_x, self.background.pos[1])
+
+        if bg_2_x > -800:
+            self.background2.pos = (bg_2_x - 2, self.background2.pos[1])
+        elif bg_2_x == -800:
+            bg_2_x = 800
+            self.background2.pos = (bg_2_x, self.background2.pos[1])
