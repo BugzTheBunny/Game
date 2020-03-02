@@ -46,6 +46,7 @@ class GameWidget(Widget):
             # Backgrounds
             self.background2 = Rectangle(source='src/background.jpg', size=(800, 600))
             self.background = Rectangle(source='src/background.jpg', size=(802, 600), pos=(800, 0))
+            self.sun = Rectangle(source='src/sun.png',size=(150,150), pos=(500,450))
             # Ground Model
             self.ground = Rectangle(pos=(0, 0), size=(800, 20))
             # Player Model
@@ -94,19 +95,20 @@ class GameWidget(Widget):
         bg_1_x = self.background.pos[0]
         bg_2_x = self.background2.pos[0]
 
+        sun_x = self.sun.pos[0]
+
         step_size = 300 * dt
 
+
         if "a" in self.keysPressed:
-            currentx -= step_size * 4
+            currentx -= step_size * 3
         if "d" in self.keysPressed:
-            currentx += step_size * 8
+            currentx += step_size * 3
 
         # Gravity (While not pressing W)
         if 'w' not in self.keysPressed:
             if collide(self.player, self.ground) is False and collide(self.player, self.platform) is False:
                 currenty -= 3  # Gravity power
-            print(f'ground {collide(self.player, self.ground)}')
-            print(f'platform {collide(self.player, self.platform)}')
             self.player.pos = (currentx, currenty)
             self.player.source = random.choice(ride_animations)
 
@@ -127,16 +129,18 @@ class GameWidget(Widget):
             else:
                 self.player.source = 'player_jump.png'
 
-        # Jump
         if collide(self.player, self.ground) and "w" in self.keysPressed or collide(self.player, self.platform) and "w" in self.keysPressed:
+            if currenty < 200:
+                currenty += step_size * 30
             self.player.source = 'player_jump.png'
-            self.player.pos = (currentx, currenty + 250)
+            self.player.pos = (currentx, currenty)
 
         # ==============================================
         # If you hit a rocket.
         if collide(self.player, self.rocket):
             print('BOOM!')
-        # Enemy HIT
+
+        # point HIT
         if collide(self.player, self.enemy):
             self.enemy.pos = (random.randint(0, 500), random.randint(0, 500))
 
@@ -152,14 +156,17 @@ class GameWidget(Widget):
         else:
             self.platform.pos = (799, random.randint(0, 30))
 
+        # Background movement
         if bg_1_x > -800:
-            self.background.pos = (bg_1_x - 2, self.background.pos[1])
+            self.background.pos = (bg_1_x - 0.5, self.background.pos[1])
         elif bg_1_x == -800:
             bg_1_x = 800
             self.background.pos = (bg_1_x, self.background.pos[1])
-
         if bg_2_x > -800:
-            self.background2.pos = (bg_2_x - 2, self.background2.pos[1])
+            self.background2.pos = (bg_2_x - 0.5, self.background2.pos[1])
         elif bg_2_x == -800:
             bg_2_x = 800
             self.background2.pos = (bg_2_x, self.background2.pos[1])
+
+        sun_x -= 0.2
+        self.sun.pos = (sun_x,self.sun.pos[1])
